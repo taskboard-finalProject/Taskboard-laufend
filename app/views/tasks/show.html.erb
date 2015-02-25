@@ -12,7 +12,7 @@
 
 <p>
   <strong>Kategorie:</strong>
-  <%= @task.category_id %>
+  <%= @task.category.name %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

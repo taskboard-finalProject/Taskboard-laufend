@@ -4,11 +4,9 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = if params[:category_id]
-     Category.find(params[:category_id]).tasks
-     else
-       Task.all
-     end
+    @tasks = Task.all
+
+
   end
 
   # GET /tasks/1
@@ -73,6 +71,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :aufgabe, category_ids: [])
+      params.require(:task).permit(:title, :aufgabe, :category_id)
     end
 end

@@ -1,29 +1,128 @@
 <h1>Listing tasks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Aufgabe</th>
-      <th>Kategorie</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.aufgabe %></td>
-        <td><%= task.category_id %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
+<table border="1px">
+  <thead>
+  <tr>
+    <th>InBox</th>
+    <th>InProcess</th>
+    <th>InReview</th>
+    <th>Complete</th>
+  </tr>
+  <tr>
+    <td>
+      <% @tasks.where(category_id: 1).each do |task| %>
+          <div>
+            <table border="1px">
+              <tr>
+                <th>Titel</th>
+                <td colspan="2"><%= task.title %></td>
+              </tr>
+              <tr>
+                <th>Beschreibung</th>
+                <td colspan="2"><%= task.aufgabe %></td>
+              </tr>
+              <tr>
+                <th>Kategorie</th>
+                <td colspan="2"><%= task.category.name %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Show', task %></td>
+                <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+      <% end %>
+
+    </td>
+    <td>
+      <% @tasks.where(category_id: 2).each do |task| %>
+          <div>
+            <table border="1px">
+              <tr>
+                <th>Titel</th>
+                <td colspan="2"><%= task.title %></td>
+              </tr>
+              <tr>
+                <th>Beschreibung</th>
+                <td colspan="2"><%= task.aufgabe %></td>
+              </tr>
+              <tr>
+                <th>Kategorie</th>
+                <td colspan="2"><%= task.category.name %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Show', task %></td>
+                <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+      <% end %>
+    </td>
+    <td>
+      <% @tasks.where(category_id: 3).each do |task| %>
+          <div>
+            <table border="1px">
+              <tr>
+                <th>Titel</th>
+                <td colspan="2"><%= task.title %></td>
+              </tr>
+              <tr>
+                <th>Beschreibung</th>
+                <td colspan="2"><%= task.aufgabe %></td>
+              </tr>
+              <tr>
+                <th>Kategorie</th>
+                <td colspan="2"><%= task.category.name %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Show', task %></td>
+                <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+      <% end %>
+    </td>
+    <td>
+      <% @tasks.where(category_id: 4).each do |task| %>
+          <div>
+            <table border="1px">
+              <tr>
+                <th>Titel</th>
+                <td colspan="2"><%= task.title %></td>
+              </tr>
+              <tr>
+                <th>Beschreibung</th>
+                <td colspan="2"><%= task.aufgabe %></td>
+              </tr>
+              <tr>
+                <th>Kategorie</th>
+                <td colspan="2"><%= task.category.name %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Show', task %></td>
+                <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+      <% end %>
+    </td>
+  </tr>
+  </thead>
 </table>
+
 
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+
+
