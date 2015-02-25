@@ -4,14 +4,51 @@
   <title>Taskboard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Navigation ein-/ausblenden</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Projekt-Titel</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Start</a></li>
+        <li><a href="#ueber">Über</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-Menü <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Aktion</a></li>
+            <li><a href="#">Andere Aktion</a></li>
+            <li><a href="#">Irgendwas anderes</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Nav-Überschrift</li>
+            <li><a href="#">Abgetrennter Link</a></li>
+            <li><a href="#">Noch ein abgetrennter Link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
 <body> 
+
 
 <div id="user_nav">
 <% if user_signed_in? %>
 Signed in as <%= current_user.email %>. Not you?
-<%= link_to "Sign out", destroy_user_session_path %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <% else %>
 <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in",
 new_user_session_path %>
