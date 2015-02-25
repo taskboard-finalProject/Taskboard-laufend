@@ -42,8 +42,7 @@
   </div>
 </nav>
 
-<body> 
-
+<div class="container theme-showcase" role="main">
 
 <div id="user_nav">
 <% if user_signed_in? %>
@@ -66,7 +65,11 @@ new_user_session_path %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<%= yield %> 
 
+
+<div class="well">
+<%= yield %>
+</div>
+</div>
 </body>
 </html>
