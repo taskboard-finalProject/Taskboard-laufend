@@ -4,8 +4,10 @@
   <title>Taskboard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
+<<<<<<< HEAD
 <body>
 <nav class="navbar navbar-default">
   <div class="container">
@@ -39,8 +41,32 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+=======
+<body> 
+>>>>>>> 02afcd7fe7896518e9d0583488e75887980d9ee8
 
-<%= yield %>
+<div id="user_nav">
+<% if user_signed_in? %>
+Signed in as <%= current_user.email %>. Not you?
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in",
+new_user_session_path %>
+<% end %>
+</div>
+
+
+
+
+
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<%= yield %> 
 
 </body>
 </html>

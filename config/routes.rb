@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tasks
   #get ':category_id', to: 'tasks#index', as: 'category_tours'
 
