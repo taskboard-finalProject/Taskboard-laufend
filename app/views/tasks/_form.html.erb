@@ -24,7 +24,8 @@
    <%= f.collection_select :category_id, Category.all, :id, :name, {selected: @task.category_id, include_hidden: false},  multiple: false%>
   </div>
     <br>
-  <div >
+    <%= f.hidden_field :UserEmailAd, :value => current_user.email %>
+    <div >
     <%= f.submit(:class=>"btn btn-lg btn-primary") %>
   </div>
 <% end %>
