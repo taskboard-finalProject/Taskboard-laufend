@@ -6,7 +6,7 @@ von Sebastian Möller und Christian Förster
 Kernfunktion des Projekts=
 Nach dem Erstellen eines Profils, kann man dann, unter dem erscheinenden Punkt, in der Navigationsbar "Taskboards", ein Projekt anlegen.
 In dem erstellten Projekt kann man Aufgaben hinzufügen, ändern und löschen. 
-Es ist wesentlichen ein Aufgabenplaner. 
+Es ist im wesentlichen ein Aufgabenplaner. 
 
 Da wir beide permanent ständig zusammen programmiert und gearbeitet haben, sind die Commits öfters auch ein einem Rechner erarbeitet worden.
 
