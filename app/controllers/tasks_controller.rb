@@ -6,7 +6,6 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.where(UserEmailAd: current_user.email)
-
   end
 
   # GET /tasks/1
