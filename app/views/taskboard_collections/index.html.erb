@@ -1,25 +1,23 @@
 <h1>Ihre Taskboards</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @taskboard_collections.each do |taskboard_collection| %>
-      <tr>
-        <td><%= taskboard_collection.name %><%= taskboard_collection.id %></td>
-        <td><%= link_to 'Show', taskboard_collection %></td>
-        <td><%= link_to 'Edit', edit_taskboard_collection_path(taskboard_collection) %></td>
-        <td><%= link_to 'Destroy', taskboard_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'Neues Taskboard anlegen', new_taskboard_collection_path %>
 
-<br>
 
-<%= link_to 'New Taskboard collection', new_taskboard_collection_path %>
+<% @taskboard_collections.each do |taskboard_collection| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= taskboard_collection.name %></h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+    <tr><td><%= link_to 'Anzeigen', taskboard_collection %></td></tr>
+    <tr><td><%= link_to 'Namen ändern', edit_taskboard_collection_path(taskboard_collection) %></td></tr>
+    <tr><td><%= link_to 'Taskboard löschen', taskboard_collection, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td></tr>
+    </table>
+  </div>
+</div>
+<% end %>
+
+
+

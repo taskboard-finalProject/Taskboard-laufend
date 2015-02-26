@@ -1,4 +1,10 @@
-<h1><%= TaskboardCollection.find(session[:taskboard]).name %></h1>
+<p>
+  <%= link_to 'Zurück zur Taskboardübersicht', taskboard_collections_path %>
+
+</p>
+
+
+<h1><%= TaskboardCollection.find(session[:taskboard]).name %> </h1> <%= link_to 'Neu Task anlegen', new_task_path %>
 
 
 
@@ -37,8 +43,6 @@
               </div>
               <div class="panel-body">
                 <%= task.aufgabe %>
-                <%= task.TaskboardCollectionID %>
-                <%= session[:taskboard] %>
               </div>
             </div>
           </div>
@@ -148,6 +152,6 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+
 
 
