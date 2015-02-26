@@ -1,28 +1,45 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Taskboard-Projekt.
+von Sebastian Möller und Christian Förster
 
-Things you may want to cover:
+Kernfunktion des Projekts=
+Nach dem Erstellen eines Profils, kann man dann, unter dem erscheinenden Punkt, in der Navigationsbar "Taskboards", ein Projekt anlegen.
+In dem erstellten Projekt kann man Aufgaben hinzufügen, ändern und löschen. 
+Es ist wesentlichen ein Aufgabenplaner. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Da wir beide permanent ständig zusammen programmiert und gearbeitet haben, sind die Commits öfters auch ein einem Rechner erarbeitet worden.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Versionen =
+
+- Ruby Version 2.1.2p95 (2014-05-08 revision 45877)
+
+- Rails Version 4.1.8
+
+
+Schritte, die  befolgt werden müssen!
+=
+1.
+
+bundle install
+
+2. 
+
+bundle update
+
+3. 
+
+rake db:migrate
+
+4.
+
+rake db:schema:load
+
+5.
+
+rake db:seed
+
+.. rails server
+
+
