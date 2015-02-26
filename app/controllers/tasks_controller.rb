@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.where(UserEmailAd: current_user.email)
+    @tasks = Task.where(UserEmailAd: current_user.email, TaskboardCollectionID: session[:taskboard])
   end
 
   # GET /tasks/1
@@ -70,6 +70,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :aufgabe, :category_id, :UserEmailAd)
+      params.require(:task).permit(:title, :aufgabe, :category_id, :UserEmailAd, :TaskboardCollectionID)
     end
 end

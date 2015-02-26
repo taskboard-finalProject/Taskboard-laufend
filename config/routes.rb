@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :taskboard_collections
+
   resources :starts
 
   devise_for :users

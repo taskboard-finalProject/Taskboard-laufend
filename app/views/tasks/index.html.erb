@@ -1,4 +1,4 @@
-<h1>Taskboard</h1>
+<h1><%= TaskboardCollection.find(session[:taskboard]).name %></h1>
 
 
 
@@ -37,7 +37,8 @@
               </div>
               <div class="panel-body">
                 <%= task.aufgabe %>
-                <%= session[:taskboard]%>
+                <%= task.TaskboardCollectionID %>
+                <%= session[:taskboard] %>
               </div>
             </div>
           </div>

@@ -25,6 +25,7 @@
   </div>
     <br>
     <%= f.hidden_field :UserEmailAd, :value => current_user.email %>
+    <%= f.hidden_field :TaskboardCollectionID, :value => session[:taskboard] %>
     <div >
     <%= f.submit(:class=>"btn btn-lg btn-primary") %>
   </div>
