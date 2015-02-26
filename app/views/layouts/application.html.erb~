@@ -23,6 +23,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><%= link_to 'StartSeite', starts_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
         <% if user_signed_in? %><li><%= link_to 'Tasks', tasks_path %></li><%end%>
         
       </ul>
@@ -30,13 +31,7 @@
 
 <div style="">
 
-          <%= form_for(:user, :url => session_path(:user), html:{class: "form-inline"}) do |f| %>
-             <%= f.text_field :email, class: "form-control", :placeholder => "Email" %>
-             <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
-            <div class="form-group"> <%= f.check_box :remember_me, class: "form-control" %><%= f.label :remember_me, class: "form-control" %>   </div>
-             <%= f.submit 'Sign in', class: "btn btn-default" %>
-             <%= link_to "Forgot your password?", new_password_path(:user) %>
-          <% end %>
+ 
 
 
 <div id="user_nav">
@@ -44,37 +39,23 @@
             Signed in as <%= current_user.email %>. Not you?
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
-            <%= link_to "Sign up", new_user_registration_path %>
-        <% end %>
+<%= form_for(:user, :url => session_path(:user), html:{class: "form-inline"}) do |f| %>
+             <%= f.text_field :email, class: "form-control", :placeholder => "Email" %>
+             <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
+            <div class="form-group"> <%= f.check_box :remember_me, class: "form-control" %><%= f.label :remember_me, class: "form-control" %>   </div>
+             <%= f.submit 'Sign in', class: "btn btn-default" %>
+             <%= link_to "Forgot your password?", new_password_path(:user) %>
+          <% end %>
+		
+       <% end %>
       </div>
 
   </div> 
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-    
+   
   </div>
 </nav>
 
 <div class="container theme-showcase" role="main">
-
-
-
-
-
-
-
 
   <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
