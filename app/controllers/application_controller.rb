@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
       ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
     end
   end
+
+
+ # def after_sign_in_path_for(resource)
+  #  redirect_to '/tasks'
+  #end
 end
