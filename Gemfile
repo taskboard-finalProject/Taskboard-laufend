@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+gem 'guard-rspec'
+gem 'faker'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
