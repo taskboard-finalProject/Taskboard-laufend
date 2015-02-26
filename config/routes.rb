@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :starts
+
   devise_for :users
   resources :tasks
   #get ':category_id', to: 'tasks#index', as: 'category_tours'
 
-  root 'tasks#index'
+  root 'starts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

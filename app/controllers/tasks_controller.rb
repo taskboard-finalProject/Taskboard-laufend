@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
