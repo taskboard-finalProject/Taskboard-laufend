@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @taskboard_collection.name %>
+</p>
+
+<%= link_to 'Edit', edit_taskboard_collection_path(@taskboard_collection) %> |
+<%= link_to 'Back', taskboard_collections_path %>
