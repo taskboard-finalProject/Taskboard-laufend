@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20150226065432) do
     t.integer  "category_id"
   end
 
-
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
