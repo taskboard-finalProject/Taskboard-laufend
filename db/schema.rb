@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150226065432) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
-    t.string   "UserEmailAd"
   end
 
   create_table "users", force: true do |t|

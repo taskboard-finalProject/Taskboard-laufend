@@ -24,38 +24,22 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'StartSeite', starts_path %></li>
         <% if user_signed_in? %><li><%= link_to 'Tasks', tasks_path %></li><%end%>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-Menü <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Aktion</a></li>
-            <li><a href="#">Andere Aktion</a></li>
-            <li><a href="#">Irgendwas anderes</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Nav-Überschrift</li>
-            <li><a href="#">Abgetrennter Link</a></li>
-            <li><a href="#">Noch ein abgetrennter Link</a></li>
-          </ul>
-        </li>
+        
       </ul>
+</div><!--/.nav-collapse -->
 
+<div style="">
 
-
-
-      <div style="float:right;">
-        <form class ="form-inline">
-          <%= form_for(:user, :url => session_path(:user)) do |f| %>
-              <%= f.text_field :email, class: "form-control", :placeholder => "Email" %>
-              <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
-              <%= f.check_box :remember_me, class: "form-control" %>
-              <%= f.label :remember_me, class: "form-control" %>
-              <%= f.submit 'Sign in', class: "btn btn-default" %>
-              <%= link_to "Forgot your password?", new_password_path(:user) %>
+          <%= form_for(:user, :url => session_path(:user), html:{class: "form-inline"}) do |f| %>
+             <%= f.text_field :email, class: "form-control", :placeholder => "Email" %>
+             <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
+            <div class="form-group"> <%= f.check_box :remember_me, class: "form-control" %><%= f.label :remember_me, class: "form-control" %>   </div>
+             <%= f.submit 'Sign in', class: "btn btn-default" %>
+             <%= link_to "Forgot your password?", new_password_path(:user) %>
           <% end %>
-        </form>
-      </div>
 
 
-      <div id="user_nav">
+<div id="user_nav">
         <% if user_signed_in? %>
             Signed in as <%= current_user.email %>. Not you?
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
@@ -64,6 +48,9 @@
         <% end %>
       </div>
 
+  </div> 
+
+      
 
 
 
@@ -76,7 +63,7 @@
 
 
 
-    </div><!--/.nav-collapse -->
+    
   </div>
 </nav>
 
