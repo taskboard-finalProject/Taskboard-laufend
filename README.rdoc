@@ -8,7 +8,7 @@ Nach dem Erstellen eines Profils, kann man dann, unter dem erscheinenden Punkt, 
 In dem erstellten Projekt kann man Aufgaben hinzufügen, ändern und löschen. 
 Es ist im wesentlichen ein Aufgabenplaner. 
 
-Da wir beide permanent ständig zusammen programmiert und gearbeitet haben, sind die Commits öfters auch ein einem Rechner erarbeitet worden.
+Da wir beide ständig zusammen programmiert und gearbeitet haben, sind die Commits öfters auch ein einem Rechner erarbeitet worden.
 
 
 Versionen =
@@ -42,4 +42,7 @@ rake db:seed
 
 .. rails server
 
-
+Ein Heroku Deployment hat aufgrund uns nicht nachvollziehbarer Probleme leider nicht geklappt. Für weitere Rückfragen 
+stehen wir gerne zu verfügung 
+Sebastian Möller sm996483@fh-muenster.de
+Christian Förster cf328622@fh-muenster.de
