@@ -38,21 +38,52 @@
           </ul>
         </li>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+     
 
-<div class="container theme-showcase" role="main">
+
+
+<div style="float:right;">
+<form class ="form-inline">
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.text_field :email, class: "form-control", :placeholder => "Email" %>
+  <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
+  <%= f.check_box :remember_me, class: "form-control" %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in', class: "btn btn-default" %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
+</form>
+</div>
+
 
 <div id="user_nav">
 <% if user_signed_in? %>
 Signed in as <%= current_user.email %>. Not you?
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <% else %>
-<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in",
-new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %>
 <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+
+
 
 
 
